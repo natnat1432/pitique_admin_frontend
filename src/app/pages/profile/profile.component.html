@@ -1,0 +1,60 @@
+<app-loading *ngIf="isLoading" />
+<app-sidebar [page]="pageTitle"></app-sidebar>
+
+<div class="mcw">
+    <div class="content">
+        <div *ngIf="isLoaded">
+            <h1>Profile</h1>
+            <br>
+
+           
+
+            <div class="profile-image-register">
+                <img [src]="serverAPI + '/api/admin/'+data.admin_email+'/profileimage'" title="Profile Picture" alt="">
+            </div>
+            <mat-form-field>
+                <mat-label>Admin ID</mat-label>
+                <input matInput [(ngModel)]="data.admin_id" readonly>
+            </mat-form-field>
+
+            <br>
+            <h4>Basic Info</h4>
+            <br>
+            <mat-form-field>
+                <mat-label>Firstname</mat-label>
+                <input matInput [(ngModel)]="data.admin_fname" class="input">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Middlename</mat-label>
+                <input matInput [(ngModel)]="data.admin_mname">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Lastname</mat-label>
+                <input matInput [(ngModel)]="data.admin_lname">
+            </mat-form-field>
+            <br>
+            <h4>Account & Contact Info</h4>
+            <br>
+            <mat-form-field id="email">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="data.admin_email" readonly>
+            </mat-form-field>
+            <br>
+                <mat-form-field>
+                  <mat-label>Phone</mat-label>
+                  <input type="tel" matInput placeholder="9XX-XXX-XXXX" [(ngModel)]="data.admin_phone" [disabled]="allowEdit === false">
+                  <mat-icon matSuffix (click)="allowEdit = !allowEdit" *ngIf="allowEdit == false">mode_edit</mat-icon>
+                </mat-form-field>
+              
+
+            <br><br>
+            <mat-form-field>
+                <mat-label>Status</mat-label>
+                <input matInput [(ngModel)]="data.admin_status" readonly>
+      
+            </mat-form-field>
+            <br>
+            <button mat-stroked-button color="primary" *ngIf="allowEdit == true">Update</button>
+        </div>
+    </div>
+</div>

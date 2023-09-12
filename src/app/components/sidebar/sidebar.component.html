@@ -1,0 +1,47 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<div class="msb" id="msb">
+    <nav class="navbar" role="navigation">
+      <br>
+        <div class="navbar-header">
+            <div class="brand-wrapper">
+                <div class="brand-name-wrapper">
+                    <a class="navbar-brand" href="#">
+                      <img src="../assets/pitique_white.svg" alt="Pitique Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-links">
+            <ul>
+                <li (click)="navigateDashboard()" [class]="(page === 'dashboard')?'selected':''"><mat-icon>dashboard</mat-icon> Dashboard</li>
+                <li (click)="navigateAdminManagement()" [class]="(page === 'admin')?'selected':''"><mat-icon>supervised_user_circle</mat-icon> Admin Management</li>
+                <li (click)="navigateRealtorManagement()" [class]="(page === 'realtor')?'selected':''"><mat-icon>supervisor_account</mat-icon> Realtor Management</li>
+                <li (click)="navigatePitiqueManagement()" [class]="(page === 'pitique')?'selected':''"><mat-icon>camera</mat-icon> Pitiquer Management</li>
+                <li (click)="navigateBookingManagement()" [class]="(page === 'booking')?'selected':''"><mat-icon>library_books</mat-icon> Booking Management</li>
+                <li (click)="navigatePaymentManagement()" [class]="(page === 'payment')?'selected':''"><mat-icon>payment</mat-icon> Payment Management</li>
+            </ul>
+        </div>
+        <br><br>
+        <div class="nav-user" >
+                <div [class]="(page) === 'profile'?'user-container selected': 'user-container'" (click)="navigateProfile()">
+              <div class="user-image">
+                  <img [src]="serverAPI + '/api/admin/'+email+'/profileimage'" alt="">
+              </div>
+              <div class="user-info">
+                  <h4>{{firstname}} {{middlename}} {{lastname}}</h4>
+                  <h5>{{position}}</h5>
+              </div>
+            </div>
+        </div>
+        <div class="logout-link">
+          <ul>
+              <li mat-button [matMenuTriggerFor]="menu"><mat-icon>exit_to_app</mat-icon> Log out</li>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">Confirm Log out</button>
+                <button mat-menu-item>Cancel</button>
+              </mat-menu>
+          </ul>
+        </div>
+
+    </nav>  
+</div>

@@ -1,1 +1,207 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+body {
+
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: #39464e;
+  }
+  
+
+  
+
+  .msb {
+    width: 250px;
+    background-color: #26cbdf;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right:auto;
+    min-height: 100%;
+    overflow-y: auto;
+    white-space: nowrap;
+    height: 100%;
+    z-index: 1;
+    border-right: 1px solid #ddd;
+    color:white;
+ 
+  }
+
+  .navbar-links{
+    margin-left:-40px;
+  }
+  .user-container{
+    display:flex;
+    align-items: center;
+    height:70px;
+    transition:0.3s ease-out;
+    padding:5px;
+  }
+  .user-container:hover{
+    background-color:#41dbee;
+    transition:0.3s ease-in;
+    
+  }
+  .navbar-links ul li {
+    cursor:pointer;
+    margin-top:15px;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    font-size:16px;
+    padding:10px;
+    margin-left:5px;
+    margin-right:5px;
+    border-radius:5px;
+    transition:0.3s ease-out;
+  }
+
+  .navbar-links ul li:hover{
+    background-color:#41dbee;
+    transition:0.3s ease-in;
+    
+  }
+
+
+  .navbar-links ul li mat-icon{
+    margin-right:10px;
+  }
+
+  .logout-link{
+    margin-left:-40px;
+  }
+  .logout-link ul li {
+    cursor:pointer;
+    margin-top:-30px;
+    display:flex;
+    align-items:center;
+    font-size:16px;
+    padding:10px;
+    margin-left:5px;
+    margin-right:5px;
+    border-radius:5px;
+    transition:0.3s ease-out;
+  }
+
+  .logout-link ul li:hover{
+    background-color:#41dbee;
+    transition:0.3s ease-in;
+    
+  }
+
+  .selected{
+    background-color:#41dbee;
+  }
+
+  .logout-link ul li mat-icon{
+    margin-right:10px;
+  }
+
+  
+  /*main content wrapper*/
+  .mcw {    
+    margin-left:250px;
+    position: relative;
+    min-height: 100%;
+    padding:10px;
+    z-index:2;
+    background-color: #f2f2f2;
+  }
+
+  .navbar hr{
+    width:80%;
+    opacity:0.4;
+  }
+
+
+  .navbar-links ul li{
+    list-style: none;
+
+  }
+  .brand-name-wrapper{
+        padding:10px; 
+  }
+
+  .brand-name-wrapper a img{
+    width:100px;
+    margin:auto;
+    display:flex;
+    justify-content: center;
+  }
+  .nav-user{
+    display:flex;
+    align-items: center;
+    padding:10px;
+    margin-top:-25px;
+    
+  }
+  .nav-user .user-image{
+    width: 25px;
+    height: 25px; 
+    border-radius: 100%;
+    overflow: hidden; 
+    position: relative;
+  }
+  .image-table{
+    width: 25px;
+    height: 25px; 
+    border-radius: 100%;
+    overflow: hidden; 
+    position: relative;
+  }
+  .nav-user .user-image img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+  }
+  .nav-user .user-info{
+    display:block;
+    margin-left:5px;
+    width:200px;
+    white-space:break-spaces;
+    cursor:pointer;
+  }
+
+  .nav-user .user-info h4{
+    margin-bottom:-15px;
+    display:flex;
+    white-space:break-spaces;
+  }
+  .nav-user .user-info h5{
+    font-weight: 100;
+  }
+
+  .content{
+    background-color: white;
+    padding:10px;
+    border:1px solid rgb(223, 223, 223);
+    border-radius:5px;
+  }
+  
+
+  .image-table{
+    width: 25px;
+    height: 25px; 
+    border-radius: 100%;
+    overflow: hidden; 
+    position: relative;
+  }
+  .image-table img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+  }
+  
+  

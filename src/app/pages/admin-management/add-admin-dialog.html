@@ -1,0 +1,113 @@
+<style>
+    mat-form-field {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .profile-image-register {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        overflow: hidden;
+        margin-right: 10px;
+        margin-left: 10px;
+        position: relative;
+        margin: auto;
+        border: 5px solid #26cbdf;
+    }
+
+    .profile-image-register img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #prof-pic-register-label {
+        background-color: none;
+        border: solid 2px #26cbdf;
+        border-radius: 10px;
+        color: #26cbdf;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+
+        cursor: pointer;
+        width: 100%;
+        height: 25px;
+        margin: auto;
+
+    }
+
+    .upload-label {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+    }
+    #email{
+        width:100%;
+    }
+</style>
+<h1 mat-dialog-title>Add Admin</h1>
+<div mat-dialog-content>
+    <h4>Profile Image</h4>
+    <div class="profile-image-register">
+        <img [src]="url" title="Profile Picture" alt="">
+    </div>
+    <input type="file" id="img" style="display:none" accept="image/*" (change)="onSelect($event)" />
+    <div class="upload-label">
+        <label id="prof-pic-register-label" for="img">Upload Image</label>
+    </div>
+    <br>
+    <p>Please fill the fills completely.</p>
+    <hr>
+    <br>
+    <h4>Basic Info</h4>
+    <br>
+    <mat-form-field>
+        <mat-label>Firstname</mat-label>
+        <input matInput [(ngModel)]="data.firstname">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Middlename</mat-label>
+        <input matInput [(ngModel)]="data.middlename">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Lastname</mat-label>
+        <input matInput [(ngModel)]="data.lastname">
+    </mat-form-field>
+    <br>
+    <h4>Account & Contact Info</h4>
+    <br>
+    <mat-form-field id="email">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="data.email">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <span matPrefix>+63 &nbsp;</span>
+        <input type="tel" matInput placeholder="9XX-XXX-XXXX" [(ngModel)]="data.phone">
+    </mat-form-field>
+    <br>
+    <mat-checkbox [(ngModel)]="data.super">Super Admin</mat-checkbox>
+    <br>
+    <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="data.status">
+            <mat-option value="active">Active</mat-option>
+            <mat-option value="suspended">Suspended</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Add</button>
+</div>

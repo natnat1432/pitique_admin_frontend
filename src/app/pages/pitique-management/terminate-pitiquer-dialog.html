@@ -1,0 +1,17 @@
+<style>
+    mat-form-field {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+ 
+</style>
+<h1 mat-dialog-title>Terminate Pitiquer</h1>
+<div mat-dialog-content>
+
+    <h5>Are you sure you want to terminate {{data.ptqr_fname}} {{data.ptqr_mname}} {{data.ptqr_lname}} </h5>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Yes</button>
+    <button mat-button (click)="onNoClick()">No</button>
+</div>

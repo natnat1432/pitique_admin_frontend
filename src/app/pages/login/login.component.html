@@ -1,0 +1,20 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<br><br><br>
+<div class="login-form">
+<img src="../assets/pitique_blue.svg" alt="Pitique Logo">
+<br>
+<mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="pass">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="login()">Log in</button>
+</div>
