@@ -134,19 +134,10 @@ export class PitiqueManagementComponent implements OnInit {
       const response = this.http.post(`${environment.serverAPI}/api/pitiquer/`, formData, options).toPromise()
       const loadingPromise = new Promise(resolve => setTimeout(resolve, environment.loadingtime))
       return await Promise.all([response, loadingPromise]).then(
-        (response: any) => {
+        async([response]:any) => {
           this.isLoading = false
-
-          if (response[0].success == true) {
-            this.util.openSnackBar("Pitiquer added successfully", "OK")
-          }
-          if(response[0].success == false && response[0].message == 'Pitiquer account already exists')
-          {
-            this.util.openSnackBar(response[0].message, "OK")
-          }
-          else {
-            this.util.openSnackBar("Error adding admin", "OK")
-          }
+            this.util.openSnackBar(response.message, "OK")
+          await this.getPitiquers();
         }
       ).catch(error => {
         this.isLoading = false
